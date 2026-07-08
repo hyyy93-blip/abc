@@ -3,70 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>abc</title>
+<title>종로 맛집 가이드</title>
 <style>
-  :root {
-    color-scheme: light dark;
-  }
+  :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
     background: #0f1115;
     color: #f5f5f7;
   }
   @media (prefers-color-scheme: light) {
-    body { background: #f5f5f7; color: #0f1115; }
-    .card { background: #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .subtitle { color: #555; }
+    body { background: #f7f7f5; color: #1a1a1a; }
+    .card { background: #ffffff; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .card p, .card .addr { color: #555; }
+    header p { color: #444; }
+    footer { color: #888; }
   }
-  .card {
-    max-width: 560px;
-    width: 90%;
-    padding: 3rem 2.5rem;
-    border-radius: 20px;
-    background: #171a21;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    text-align: center;
+  header {
+    position: relative;
+    height: 42vh;
+    min-height: 300px;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%),
+                url('https://images.unsplash.com/photo-1628532429788-c35922b5e6c1?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   }
-  h1 {
+  header .inner {
+    padding: 2.5rem;
+    max-width: 900px;
+  }
+  header .badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.8rem;
+  }
+  header h1 {
+    margin: 0 0 0.5rem;
     font-size: 2.4rem;
-    margin: 0 0 0.75rem;
+    color: white;
     letter-spacing: -0.02em;
   }
-  .subtitle {
-    font-size: 1.1rem;
-    color: #a8adb8;
-    margin: 0 0 2rem;
-    line-height: 1.6;
+  header p {
+    margin: 0;
+    color: #e5e5e5;
+    font-size: 1.05rem;
   }
-  .badge {
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: #171a21;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+  .card .content {
+    padding: 1.25rem 1.35rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .card .tag {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #f97316;
+    letter-spacing: 0.03em;
+  }
+  .card h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #b8bcc4;
+    line-height: 1.55;
+  }
+  .card .addr {
+    margin-top: auto;
+    font-size: 0.82rem;
+    color: #8a8f99;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
   footer {
-    margin-top: 2.5rem;
-    font-size: 0.8rem;
+    text-align: center;
+    padding: 2rem 1rem 2.5rem;
+    font-size: 0.82rem;
     color: #6b7280;
   }
 </style>
 </head>
 <body>
-  <div class="card">
-    <span class="badge">abc</span>
-    <h1>Welcome to abc</h1>
-    <p class="subtitle">이 페이지는 GitHub Pages를 통해 배포된 간단한 소개 페이지입니다.</p>
-    <footer>&copy; 2026 abc</footer>
-  </div>
+  <header>
+    <div class="inner">
+      <span class="badge">SEOUL · JONGNO-GU</span>
+      <h1>종로 맛집 가이드</h1>
+      <p>전통시장부터 100년 노포까지, 종로구에서 꼭 가봐야 할 맛집 모음</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1628532429788-c35922b5e6c1?w=800&q=80&auto=format&fit=crop" alt="광장시장">
+        <div class="content">
+          <span class="tag">전통시장</span>
+          <h2>광장시장</h2>
+          <p>빈대떡, 마약김밥, 육회로 유명한 서울 대표 전통시장. 좁은 골목 사이 즉석 먹거리를 즐길 수 있다.</p>
+          <div class="addr">서울 종로구 창경궁로 88</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1590437084089-9f5ae1500176?w=800&q=80&auto=format&fit=crop" alt="이문설농탕">
+        <div class="content">
+          <span class="tag">100년 노포</span>
+          <h2>이문설농탕</h2>
+          <p>1904년 개업, 서울에서 가장 오래된 식당 중 하나. 진한 사골 국물의 설렁탕이 대표 메뉴.</p>
+          <div class="addr">서울 종로구 우정국로2길 21</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?w=800&q=80&auto=format&fit=crop" alt="청진동 해장국 골목">
+        <div class="content">
+          <span class="tag">해장국</span>
+          <h2>청진동 해장국 골목</h2>
+          <p>선지와 우거지가 듬뿍 들어간 얼큰한 해장국으로 유명한 골목. 아침 일찍부터 문을 여는 집이 많다.</p>
+          <div class="addr">서울 종로구 청진동 일대</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=800&q=80&auto=format&fit=crop" alt="익선동 한옥거리">
+        <div class="content">
+          <span class="tag">한옥거리</span>
+          <h2>익선동 한옥거리</h2>
+          <p>한옥을 개조한 카페와 퓨전 레스토랑이 모여 있는 인기 골목. 이색적인 디저트와 요리를 함께 즐길 수 있다.</p>
+          <div class="addr">서울 종로구 익선동 일대</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1718777791262-c66d11baaa3b?w=800&q=80&auto=format&fit=crop" alt="통인시장">
+        <div class="content">
+          <span class="tag">전통시장</span>
+          <h2>통인시장</h2>
+          <p>엽전으로 반찬을 골라 담는 '도시락 카페'로 유명한 시장. 다양한 분식과 전 종류를 저렴하게 즐길 수 있다.</p>
+          <div class="addr">서울 종로구 자하문로15길 18</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=800&q=80&auto=format&fit=crop" alt="낙원떡집">
+        <div class="content">
+          <span class="tag">떡·전통간식</span>
+          <h2>낙원떡집 거리</h2>
+          <p>낙원상가 주변 오래된 떡집들이 모여 있는 골목. 갓 만든 인절미와 시루떡을 맛볼 수 있다.</p>
+          <div class="addr">서울 종로구 낙원동 일대</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>&copy; 2026 종로 맛집 가이드 · 이미지 출처: Unsplash</footer>
 </body>
 </html>
